@@ -38,12 +38,16 @@ async function handler () {
       await data.listings.put({listingId: newListing.id})
     }
 
-    await arc.events.publish({
-      name: 'notify-listings',
-      payload: {
-        listings: newListings
-      }
-    });
+    if (newListings.length > 0) {
+      await arc.events.publish({
+        name: 'notify-listings',
+        payload: {
+          listings: newListings
+        }
+      });
+    } else {
+      console.log("No New listings");
+    }
 
   } catch(err) {
     console.error(err);
