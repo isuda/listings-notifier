@@ -1,0 +1,23 @@
+{
+  "name": "listing-notifier",
+  "version": "1.0.0",
+  "description": "Project to get email notifications of new listings on realtor.ca",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx sandbox",
+    "test": "tape tests/*.spec.js | tap-spec"
+  },
+  "author": "Ian Suda",
+  "license": "ISC",
+  "devDependencies": {
+    "@architect/architect": "^8.4.7",
+    "eslint": "^7.18.0",
+    "tap-spec": "^5.0.0"
+  },
+  "dependencies": {
+    "@architect/functions": "^3.13.9",
+    "@architect/sandbox": "^3.3.5",
+    "realtorca": "^1.1.0",
+    "tape": "^5.1.1"
+  }
+}
